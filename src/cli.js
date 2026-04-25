@@ -2,7 +2,9 @@
 import fs from 'node:fs'
 import path from 'node:path'
 import process from 'node:process'
-import { auditReadme, formatMarkdownReport, formatTextReport } from './readme-audit.js'
+import { auditReadme, formatAnnotations, formatMarkdownReport, formatSarif, formatTextReport } from './readme-audit.js'
+
+const VERSION = '0.1.0'
 
 function parseArgs(argv) {
   const args = {
@@ -10,6 +12,9 @@ function parseArgs(argv) {
     minScore: 70,
     markdown: false,
     json: false,
+    sarif: false,
+    annotations: false,
+    version: false,
   }
 
   for (let index = 0; index < argv.length; index += 1) {
@@ -22,6 +27,12 @@ function parseArgs(argv) {
       args.markdown = true
     } else if (item === '--json') {
       args.json = true
+    } else if (item === '--sarif') {
+      args.sarif = true
+    } else if (item === '--annotations') {
+      args.annotations = true
+    } else if (item === '--version') {
+      args.version = true
     } else if (item === '-h' || item === '--help') {
       args.help = true
     } else {
@@ -33,7 +44,7 @@ function parseArgs(argv) {
 }
 
 function printHelp() {
-  console.log(`oss-readme-check
+  console.log(`oss-readme-check v${VERSION}
 
 Usage:
   oss-readme-check --path README.md --min-score 80
@@ -45,11 +56,18 @@ Options:
   --min-score N    fail when score is below N, default: 70
   --markdown       print a markdown report
   --json           print raw JSON
+  --sarif          print SARIF 2.1.0 report
+  --annotations    print GitHub Actions warnings
+  --version        print version
 `)
 }
 
 try {
   const args = parseArgs(process.argv.slice(2))
+  if (args.version) {
+    console.log(VERSION)
+    process.exit(0)
+  }
   if (args.help) {
     printHelp()
     process.exit(0)
@@ -67,6 +85,10 @@ try {
     console.log(JSON.stringify(report, null, 2))
   } else if (args.markdown) {
     console.log(formatMarkdownReport(report))
+  } else if (args.sarif) {
+    console.log(JSON.stringify(formatSarif(report), null, 2))
+  } else if (args.annotations) {
+    console.log(formatAnnotations(report))
   } else {
     console.log(formatTextReport(report))
   }

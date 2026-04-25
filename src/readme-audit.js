@@ -147,3 +147,30 @@ File: \`${report.file}\`
 ${rows}
 `
 }
+
+export function formatAnnotations(report) {
+  return report.results
+    .filter((result) => !result.passed)
+    .map((result) => `::warning file=${report.file},title=${result.title}::${result.fix}`)
+    .join('\n')
+}
+
+export function formatSarif(report) {
+  return {
+    version: '2.1.0',
+    $schema: 'https://json.schemastore.org/sarif-2.1.0.json',
+    runs: [
+      {
+        tool: { driver: { name: 'oss-readme-check', informationUri: 'https://github.com/aolingge/oss-readme-check' } },
+        results: report.results
+          .filter((result) => !result.passed)
+          .map((result) => ({
+            ruleId: result.id,
+            level: 'warning',
+            message: { text: result.fix },
+            locations: [{ physicalLocation: { artifactLocation: { uri: report.file } } }],
+          })),
+      },
+    ],
+  }
+}
