@@ -1,16 +1,30 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="980" height="300" viewBox="0 0 980 300" role="img" aria-label="README audit score preview">
-  <rect width="980" height="300" rx="22" fill="#0f172a"/>
-  <rect x="28" y="28" width="924" height="244" rx="16" fill="#111827" stroke="#334155"/>
-  <circle cx="58" cy="58" r="7" fill="#ef4444"/>
-  <circle cx="82" cy="58" r="7" fill="#f59e0b"/>
-  <circle cx="106" cy="58" r="7" fill="#22c55e"/>
-  <text x="44" y="112" font-family="Consolas, Menlo, monospace" font-size="24" fill="#f8fafc" font-weight="700">README score: 92/100</text>
-  <text x="44" y="154" font-family="Consolas, Menlo, monospace" font-size="20" fill="#22c55e">PASS  Quick start path</text>
-  <text x="44" y="190" font-family="Consolas, Menlo, monospace" font-size="20" fill="#22c55e">PASS  Multilingual entry</text>
-  <text x="44" y="226" font-family="Consolas, Menlo, monospace" font-size="20" fill="#f97316">FIX   First success verification</text>
-  <rect x="620" y="80" width="278" height="132" rx="14" fill="#f8fafc"/>
-  <text x="650" y="124" font-family="Inter, Arial, sans-serif" font-size="20" fill="#111827" font-weight="800">Launch readiness</text>
-  <rect x="650" y="150" width="194" height="16" rx="8" fill="#dcfce7"/>
-  <rect x="650" y="150" width="166" height="16" rx="8" fill="#16a34a"/>
-  <text x="650" y="192" font-family="Inter, Arial, sans-serif" font-size="16" fill="#475569">11 checks · markdown report</text>
+<svg width="980" height="430" viewBox="0 0 980 430" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="panel" x1="0" y1="0" x2="980" y2="430" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#0B1120"/>
+      <stop offset="1" stop-color="#020617"/>
+    </linearGradient>
+    <filter id="terminalShadow" x="18" y="18" width="944" height="394" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feDropShadow dx="0" dy="22" stdDeviation="24" flood-color="#000000" flood-opacity=".35"/>
+    </filter>
+  </defs>
+  <rect width="980" height="430" rx="28" fill="url(#panel)"/>
+  <path d="M0 118h980M0 236h980M0 354h980M166 0v430M332 0v430M498 0v430M664 0v430M830 0v430" stroke="#94A3B8" stroke-opacity=".06"/>
+  <g filter="url(#terminalShadow)">
+    <rect x="44" y="44" width="892" height="342" rx="22" fill="#0F172A" stroke="#334155"/>
+    <rect x="44" y="44" width="892" height="54" rx="22" fill="#111827"/>
+    <circle cx="78" cy="71" r="7" fill="#F87171"/>
+    <circle cx="104" cy="71" r="7" fill="#FBBF24"/>
+    <circle cx="130" cy="71" r="7" fill="#34D399"/>
+    <text x="462" y="77" text-anchor="middle" fill="#94A3B8" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="14" font-weight="700">oss-readme-check / terminal</text>
+  </g>
+  <text x="78" y="140" fill="#C4B5FD" font-family="JetBrains Mono,Consolas,monospace" font-size="20" font-weight="700">$ npx github:aolingge/oss-readme-check --path .</text>
+  <text x="78" y="194" fill="#F8FAFC" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="25" font-weight="850">Oss Readme Check report</text>
+  <rect x="78" y="220" width="824" height="1" fill="#334155"/>
+  <text x="78" y="264" fill="#34D399" font-family="JetBrains Mono,Consolas,monospace" font-size="18" font-weight="700">PASS</text>
+  <text x="164" y="264" fill="#E2E8F0" font-family="JetBrains Mono,Consolas,monospace" font-size="18">quick start visible</text>
+  <text x="78" y="306" fill="#34D399" font-family="JetBrains Mono,Consolas,monospace" font-size="18" font-weight="700">PASS</text>
+  <text x="164" y="306" fill="#E2E8F0" font-family="JetBrains Mono,Consolas,monospace" font-size="18">demo link present</text>
+  <text x="78" y="348" fill="#FBBF24" font-family="JetBrains Mono,Consolas,monospace" font-size="18" font-weight="700">NOTE</text>
+  <text x="164" y="348" fill="#CBD5E1" font-family="JetBrains Mono,Consolas,monospace" font-size="18">contribution path clear</text>
 </svg>
