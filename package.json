@@ -27,5 +27,9 @@
   "bugs": {
     "url": "https://github.com/aolingge/oss-readme-check/issues"
   },
-  "homepage": "https://github.com/aolingge/oss-readme-check"
+  "homepage": "https://github.com/aolingge/oss-readme-check",
+  "files": [
+    "docs",
+    "examples"
+  ]
 }
