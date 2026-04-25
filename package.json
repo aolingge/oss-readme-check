@@ -1,0 +1,31 @@
+{
+  "name": "oss-readme-check",
+  "version": "0.1.0",
+  "description": "A zero-dependency CLI that audits open-source READMEs for launch readiness.",
+  "type": "module",
+  "bin": {
+    "oss-readme-check": "./src/cli.js"
+  },
+  "scripts": {
+    "test": "node --test",
+    "check": "node src/cli.js --path README.md --min-score 80"
+  },
+  "keywords": [
+    "readme",
+    "github",
+    "opensource",
+    "cli",
+    "documentation",
+    "launch-checklist"
+  ],
+  "author": "Aolingge",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/aolingge/oss-readme-check.git"
+  },
+  "bugs": {
+    "url": "https://github.com/aolingge/oss-readme-check/issues"
+  },
+  "homepage": "https://github.com/aolingge/oss-readme-check"
+}
