@@ -30,6 +30,8 @@
   "homepage": "https://github.com/aolingge/oss-readme-check",
   "files": [
     "docs",
-    "examples"
+    "examples",
+    "CODE_OF_CONDUCT.md"
   ]
 }
+
