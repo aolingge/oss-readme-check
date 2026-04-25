@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="980" height="300" viewBox="0 0 980 300" role="img" aria-label="README audit score preview">
+  <rect width="980" height="300" rx="22" fill="#0f172a"/>
+  <rect x="28" y="28" width="924" height="244" rx="16" fill="#111827" stroke="#334155"/>
+  <circle cx="58" cy="58" r="7" fill="#ef4444"/>
+  <circle cx="82" cy="58" r="7" fill="#f59e0b"/>
+  <circle cx="106" cy="58" r="7" fill="#22c55e"/>
+  <text x="44" y="112" font-family="Consolas, Menlo, monospace" font-size="24" fill="#f8fafc" font-weight="700">README score: 92/100</text>
+  <text x="44" y="154" font-family="Consolas, Menlo, monospace" font-size="20" fill="#22c55e">PASS  Quick start path</text>
+  <text x="44" y="190" font-family="Consolas, Menlo, monospace" font-size="20" fill="#22c55e">PASS  Multilingual entry</text>
+  <text x="44" y="226" font-family="Consolas, Menlo, monospace" font-size="20" fill="#f97316">FIX   First success verification</text>
+  <rect x="620" y="80" width="278" height="132" rx="14" fill="#f8fafc"/>
+  <text x="650" y="124" font-family="Inter, Arial, sans-serif" font-size="20" fill="#111827" font-weight="800">Launch readiness</text>
+  <rect x="650" y="150" width="194" height="16" rx="8" fill="#dcfce7"/>
+  <rect x="650" y="150" width="166" height="16" rx="8" fill="#16a34a"/>
+  <text x="650" y="192" font-family="Inter, Arial, sans-serif" font-size="16" fill="#475569">11 checks · markdown report</text>
+</svg>

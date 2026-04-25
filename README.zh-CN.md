@@ -26,6 +26,19 @@
 
 ---
 
+<table>
+  <tr>
+    <td width="25%" valign="top"><b>给首页打分</b><br />把 README 质量变成可见的发布准备度分数。</td>
+    <td width="25%" valign="top"><b>发现缺失证据</b><br />检查快速开始、截图、验证方式和可信信号。</td>
+    <td width="25%" valign="top"><b>接入 CI</b><br />用 `--min-score` 在发布前拦住太弱的 README。</td>
+    <td width="25%" valign="top"><b>给出改法</b><br />输出具体修复建议，而不是泛泛说“文档不够”。</td>
+  </tr>
+</table>
+
+<p align="center">
+  <img src="assets/score-preview.svg" alt="README audit score preview with pass and fix results" width="92%" />
+</p>
+
 ## 为什么做这个项目
 
 很多仓库想要 Star，但 README 第一屏没有回答最基础的问题：

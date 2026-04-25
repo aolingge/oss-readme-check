@@ -26,6 +26,19 @@
 
 ---
 
+<table>
+  <tr>
+    <td width="25%" valign="top"><b>Score the front page</b><br />Turn README quality into a visible launch-readiness score.</td>
+    <td width="25%" valign="top"><b>Catch missing proof</b><br />Find absent quick starts, screenshots, verification, and trust signals.</td>
+    <td width="25%" valign="top"><b>Gate pull requests</b><br />Use `--min-score` in CI before a repo asks for stars.</td>
+    <td width="25%" valign="top"><b>Write better docs</b><br />Get concrete fix text instead of vague documentation advice.</td>
+  </tr>
+</table>
+
+<p align="center">
+  <img src="assets/score-preview.svg" alt="README audit score preview with pass and fix results" width="92%" />
+</p>
+
 ## Why This Exists
 
 Many repositories ask for stars before the front page answers basic questions:
