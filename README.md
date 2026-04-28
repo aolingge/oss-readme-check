@@ -55,14 +55,16 @@ Many repositories ask for stars before the front page answers basic questions:
 Run it in any repository:
 
 ```bash
-npx oss-readme-check --path README.md --min-score 80
+npx github:aolingge/oss-readme-check --path README.md --min-score 80
 ```
 
 Generate a Markdown report:
 
 ```bash
-npx oss-readme-check --markdown > readme-report.md
+npx github:aolingge/oss-readme-check --markdown > readme-report.md
 ```
+
+After npm publication, the shorter `npx oss-readme-check` command will be available.
 
 You know it worked when you see:
 
@@ -131,4 +133,3 @@ Use this project as a repeatable gate before an AI agent marks work as done:
 
 - [Quality gate guide](docs/quality-gates.md)
 - [Copy-ready GitHub Actions example](examples/github-action.yml)
-

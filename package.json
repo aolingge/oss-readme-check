@@ -29,8 +29,15 @@
   },
   "homepage": "https://github.com/aolingge/oss-readme-check",
   "files": [
+    "src",
+    "assets",
     "docs",
     "examples",
+    "README.md",
+    "README.zh-CN.md",
+    "LICENSE",
+    "CONTRIBUTING.md",
+    "SECURITY.md",
     "CODE_OF_CONDUCT.md"
   ]
 }
