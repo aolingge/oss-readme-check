@@ -95,6 +95,19 @@ FAIL First success verification
 oss-readme-check --path README.md --markdown
 ```
 
+Profile checks can absorb the common micro-tool use cases:
+
+```bash
+oss-readme-check --path README.md --profile demo-links --min-score 80
+oss-readme-check --path README.md --profile install-replay --min-score 80
+```
+
+| Profile | Replaces | Extra focus |
+| --- | --- | --- |
+| `core` | default launch-readiness audit | quick start, verification, badges, visual proof, security, license |
+| `demo-links` | `readme-demo-link-check` | visual preview, demo/example link, GitHub/Gitee/source surface |
+| `install-replay` | `readme-install-replay` | prerequisites, copy-ready commands, verification output, troubleshooting |
+
 ```md
 # README Audit Report
 

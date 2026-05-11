@@ -10,6 +10,7 @@ function parseArgs(argv) {
   const args = {
     readmePath: 'README.md',
     minScore: 70,
+    profile: 'core',
     markdown: false,
     json: false,
     sarif: false,
@@ -23,6 +24,8 @@ function parseArgs(argv) {
       args.readmePath = argv[++index]
     } else if (item === '--min-score') {
       args.minScore = Number(argv[++index])
+    } else if (item === '--profile') {
+      args.profile = argv[++index]
     } else if (item === '--markdown') {
       args.markdown = true
     } else if (item === '--json') {
@@ -54,6 +57,7 @@ Usage:
 Options:
   --path FILE       README file to audit, default: README.md
   --min-score N    fail when score is below N, default: 70
+  --profile NAME   extra profile: core, demo-links, install-replay
   --markdown       print a markdown report
   --json           print raw JSON
   --sarif          print SARIF 2.1.0 report
@@ -79,7 +83,7 @@ try {
   }
 
   const content = fs.readFileSync(absolutePath, 'utf8')
-  const report = auditReadme(content, { file: args.readmePath })
+  const report = auditReadme(content, { file: args.readmePath, profile: args.profile })
 
   if (args.json) {
     console.log(JSON.stringify(report, null, 2))

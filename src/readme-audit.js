@@ -1,4 +1,4 @@
-const checks = [
+const baseChecks = [
   {
     id: 'one_liner',
     weight: 10,
@@ -87,7 +87,73 @@ const checks = [
   },
 ]
 
+const profileChecks = {
+  core: [],
+  'demo-links': [
+    {
+      id: 'demo_quick_start',
+      weight: 10,
+      title: 'Demo profile: quick start or usage',
+      test: (text) => /quick start|usage|install|快速开始|用法|安装/i.test(text),
+      fix: 'Add a quick start or usage section near the top.',
+    },
+    {
+      id: 'demo_visual',
+      weight: 10,
+      title: 'Demo profile: visual proof',
+      test: (text) => /img|image|screenshot|banner|preview|截图|预览/i.test(text),
+      fix: 'Add a screenshot, banner, preview image, or terminal capture.',
+    },
+    {
+      id: 'demo_link',
+      weight: 10,
+      title: 'Demo profile: demo or example link',
+      test: (text) => /demo|live|example|pages|演示|示例/i.test(text),
+      fix: 'Link a live demo, example, GitHub Pages preview, or sample output.',
+    },
+    {
+      id: 'demo_source',
+      weight: 10,
+      title: 'Demo profile: source or mirror link',
+      test: (text) => /gitee|github|mirror|source|repository|镜像|源码/i.test(text),
+      fix: 'Add source, repository, or mirror links so visitors can verify the project surface.',
+    },
+  ],
+  'install-replay': [
+    {
+      id: 'install_prereq',
+      weight: 10,
+      title: 'Install profile: prerequisites',
+      test: (text) => /prerequisite|requires|node|python|jdk|前置|依赖/i.test(text),
+      fix: 'List runtime or tool prerequisites before install commands.',
+    },
+    {
+      id: 'install_command',
+      weight: 10,
+      title: 'Install profile: copy-ready command',
+      test: (text) => /```|npm|pnpm|pip|docker|命令/i.test(text),
+      fix: 'Add copy-ready install or run commands.',
+    },
+    {
+      id: 'install_verify',
+      weight: 10,
+      title: 'Install profile: verification step',
+      test: (text) => /verify|test|expected|output|验证|输出/i.test(text),
+      fix: 'Show the command or output that proves installation worked.',
+    },
+    {
+      id: 'install_troubleshooting',
+      weight: 10,
+      title: 'Install profile: troubleshooting path',
+      test: (text) => /troubleshoot|error|faq|debug|排障|错误|常见问题/i.test(text),
+      fix: 'Add a troubleshooting, FAQ, or common errors section.',
+    },
+  ],
+}
+
 export function auditReadme(content, options = {}) {
+  const profile = options.profile ?? 'core'
+  const checks = [...baseChecks, ...(profileChecks[profile] ?? [])]
   const results = checks.map((check) => {
     const passed = check.test(content)
     return {
@@ -106,6 +172,7 @@ export function auditReadme(content, options = {}) {
 
   return {
     file: options.file ?? 'README.md',
+    profile,
     score,
     maxScore: 100,
     passed: results.filter((result) => result.passed).length,
@@ -118,6 +185,7 @@ export function formatTextReport(report) {
   const lines = [
     `README score: ${report.score}/100 (${report.passed}/${report.total} checks passed)`,
     `File: ${report.file}`,
+    `Profile: ${report.profile}`,
     '',
   ]
 
@@ -141,6 +209,7 @@ export function formatMarkdownReport(report) {
 Score: **${report.score}/100**
 
 File: \`${report.file}\`
+Profile: \`${report.profile}\`
 
 | Status | Check | Fix |
 | --- | --- | --- |
